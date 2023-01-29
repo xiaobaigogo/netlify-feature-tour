@@ -3,26 +3,27 @@ import { lazy } from "react";
 import App from "../App";
 import Home from "../components/home";
 
-// const Home = lazy(() => import('../components/home'))
-const routes:RouteObject[] = [
+const Major = lazy(() => import('@/components/major'))
+const About = lazy(() => import("@/components/about"));
+const routes: RouteObject[] = [
   {
     path: "/",
     // loader: () => redirect('/home'),
     element: <App />,
     children: [
       {
-        path: "/home",
+        // path: "/home",
         element: <Home />,
         index: true,
       },
       {
         path: "/major",
-        element: <Home />,
+        element: <Major />,
         index: true,
       },
       {
         path: "/about",
-        element: <Home />,
+        element: <About />,
         index: true,
       },
     ],
@@ -31,7 +32,7 @@ const routes:RouteObject[] = [
   //   path: "/home",
   //   element: <Home />,
   // },
-]
+];
 
 const router = createBrowserRouter(
   routes

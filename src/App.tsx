@@ -1,19 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Layout } from 'antd';
-import { Content, Footer, Header } from 'antd/es/layout/layout';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { ConfigProvider, Layout } from "antd";
+import { Content, Footer, Header } from "antd/es/layout/layout";
+import { Outlet } from "react-router-dom";
+import HeaderNav from "./layout/header";
 
 function App() {
   return (
-    <Layout>
-      <Header>Header</Header>
-      <Content>
-        <Outlet></Outlet>
-      </Content>
-      <Footer>Footer</Footer>
-    </Layout>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#1677ff',
+          borderRadius: 6,
+        },
+      }}
+    >
+      <Layout>
+        <Header>
+          <HeaderNav />
+        </Header>
+        <Content>
+          <Outlet></Outlet>
+        </Content>
+        <Footer>Footer</Footer>
+      </Layout>
+    </ConfigProvider>
   );
 }
 

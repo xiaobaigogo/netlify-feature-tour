@@ -1,23 +1,56 @@
-import { Menu } from "antd";
+import { Col, Menu, Row } from "antd";
 import { routes } from "@/routes";
+import { Link, RouteObject, useLocation, useNavigate } from "react-router-dom";
+import type { MenuProps } from "antd";
+
+const menus = [
+  {
+    label: "首页",
+    key: "/",
+  },
+  {
+    label: "专业设置",
+    key: "/major",
+  },
+  {
+    label: "关于我们",
+    key: "/about",
+  },
+];
 
 export default function Header() {
-  
+  const navigate = useNavigate();
+  const location = useLocation();
+
   return (
-    <>
-      <div className="logo"></div>
-      <Menu
+    <Row style={{ width: "100%", height: "100%" }}>
+      <Col
+        span={2}
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src="/logo.png"
+          style={{
+            maxWidth: "100%",
+            maxHeight: "100%",
+          }}
+          alt=""
+        />
+      </Col>
+      <Col span={22}>
+        <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={['2']}
-          items={new Array(15).fill(null).map((_, index) => {
-            const key = index + 1;
-            return {
-              key,
-              label: `nav ${key}`,
-            };
-          })}
+          selectedKeys={[location.pathname]}
+          items={menus}
+          onClick={(item) => navigate(item.key)}
         />
-    </>
-  )
+      </Col>
+    </Row>
+  );
 }
