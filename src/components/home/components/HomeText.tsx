@@ -7,7 +7,7 @@ export default function HomeText({
 }: {
   title: string;
   subTitle: string;
-  paragraph: string |string[];
+  paragraph?: string |string[];
 }) {
   return (
     <>
@@ -17,16 +17,22 @@ export default function HomeText({
       <Typography.Title level={4} type="secondary" style={{ marginTop: "5px" }}>
         {subTitle}
       </Typography.Title>
-      {typeof paragraph == "string" ? (
-        <Typography.Paragraph style={{ lineHeight: 2.5 }}>
-          {paragraph}
-        </Typography.Paragraph>
+      {!paragraph ? (
+        <></>
       ) : (
-        paragraph.map((item) => (
-          <Typography.Paragraph style={{ lineHeight: 2.5 }} key={item}>
-            {item}
-          </Typography.Paragraph>
-        ))
+        <>
+          {typeof paragraph == "string" ? (
+            <Typography.Paragraph style={{ lineHeight: 2.5 }}>
+              {paragraph}
+            </Typography.Paragraph>
+          ) : (
+            paragraph.map((item) => (
+              <Typography.Paragraph style={{ lineHeight: 2.5 }} key={item}>
+                {item}
+              </Typography.Paragraph>
+            ))
+          )}
+        </>
       )}
     </>
   );
