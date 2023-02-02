@@ -6,7 +6,7 @@ export default function Calligraphy() {
     <>
       <Row>
         <Col span={24}>
-          <MajorTitle title={"书法"} subTitle={"calligraphy"}></MajorTitle>
+          <MajorTitle title={"#书法"} subTitle={"calligraphy"}></MajorTitle>
         </Col>
       </Row>
       <Row>

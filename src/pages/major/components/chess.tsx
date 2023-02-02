@@ -6,7 +6,7 @@ export default function Chess() {
     <>
       <Row>
         <Col span={24}>
-          <MajorTitle title={"象棋"} subTitle={"chess"}></MajorTitle>
+          <MajorTitle title={"#象棋"} subTitle={"chess"}></MajorTitle>
         </Col>
       </Row>
       <Row gutter={24}>

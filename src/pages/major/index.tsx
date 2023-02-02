@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 import style from "./index.module.scss";
 import { Card } from "antd";
+import Piano from "./components/piano";
   
 
 export default function Major() {
@@ -40,6 +41,9 @@ export default function Major() {
       </div>
       <div id="painting">
         <Painting />
+      </div>
+      <div id="piano">
+        <Piano />
       </div>
     </Card>
   );

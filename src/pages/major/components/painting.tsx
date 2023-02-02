@@ -6,7 +6,7 @@ export default function Painting() {
     <>
       <Row>
         <Col span={24}>
-          <MajorTitle title={"美术"} subTitle={"painting"}></MajorTitle>
+          <MajorTitle title={"#美术"} subTitle={"painting"}></MajorTitle>
         </Col>
       </Row>
       <Row>

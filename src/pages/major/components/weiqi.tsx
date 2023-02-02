@@ -7,7 +7,7 @@ export default function Weiqi() {
     <>
       <Row>
         <Col span={24}>
-          <MajorTitle title={"围棋"} subTitle={"weiqi"}></MajorTitle>
+          <MajorTitle title={"#围棋"} subTitle={"weiqi"}></MajorTitle>
         </Col>
       </Row>
       <Row gutter={24} align={"middle"} justify={"center"}>
@@ -41,17 +41,26 @@ export default function Weiqi() {
           />
         </Col>
       </Row>
-      <Row gutter={24} align={"middle"} justify={"center"}>
-        <Col span={12}>
+      <Row gutter={24} align={"middle"} justify={"center"} style={{marginBottom: '30px'}}>
+        <Col span={8}>
           <Image
             src="/majors/围棋奖状1.jpg"
             alt=""
             className={"image-style"}
             width={"100%"}
-            height={"400px"}
+            height={"300px"}
           />
         </Col>
-        <Col span={12}>
+        <Col span={8}>
+          <Image
+            src="/majors/围棋奖状2.jpg"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
+          />
+        </Col>
+        <Col span={8}>
           <Typography.Paragraph>
             一年两度的棋力测评是围棋专业的重头戏，益智艺术培训中心会根据学员的棋力水平进行分组比赛。
           </Typography.Paragraph>
@@ -61,18 +70,27 @@ export default function Weiqi() {
         </Col>
       </Row>
       <Row gutter={24} align={"middle"} justify={"center"}>
-        <Col span={12}>
+        <Col span={8}>
           <Typography.Paragraph>
             同时，为更好提高学员棋力，除老师下指导棋、与棋友对弈外，围棋专业特为高级班开设电教室，借助电子设备进行深度教学（包括网上对弈、棋谱分析等），效果更佳。
           </Typography.Paragraph>
         </Col>
-        <Col span={12}>
+        <Col span={8}>
           <Image
-            src="/majors/围棋电教室.png"
+            src="/majors/围棋电教室1.png"
             alt=""
             className={"image-style"}
             width={"100%"}
-            height={"400px"}
+            height={"300px"}
+          />
+        </Col>
+        <Col span={8}>
+          <Image
+            src="/majors/围棋电教室2.png"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
           />
         </Col>
       </Row>
