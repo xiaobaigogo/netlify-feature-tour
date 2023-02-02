@@ -1,12 +1,17 @@
 import { Col, Row, Image, Typography, Statistic, Divider, Card } from "antd";
+import { Link } from "react-router-dom";
+import { BookOne, Checkerboard, Chess, Music, MusicOne, Piano, Platte, WritingFluently } from "@icon-park/react";
 import HomeCarousel from "./components/HomeCarousel";
-import HomeText from "./components/HomeText";
+import HomeText from "@/components/TitlePar";
+import CardTemp from "@/components/CardTemp/CardTemp";
 
 const philosophy = {
   title: "我们的理念",
   subTitle: "Our Philosophy",
-  paragraph: `专注艺术培训，拥有热衷于少儿儿童教育事业的管理团队和具有丰富教学经验的高素质、高水准师资力量。
-        始终坚持“以棋启智，以棋育人”的教育、教学理念，促进我国艺术培训事业蓬勃发展。`,
+  paragraph: [
+    "坚持“以棋启智，以棋育人”的教育、教学理念",
+    "教导学生遵循“自信、友爱、谦恭、共进”的社训学习、做事和做人",
+  ],
   picture:
     "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
 };
@@ -54,41 +59,57 @@ const majors = [
     title: "围棋",
     img: "/majors/围棋.webp",
     id: "weiqi",
+    icon: <Checkerboard theme="outline" size="24" fill="#333" />,
+    description: "战罢两奁分白黑，一秤何处有亏成",
   },
   {
     title: "象棋",
     img: "/majors/围棋.webp",
+    icon: <Chess theme="outline" size="24" fill="#333" />,
     id: "chess",
+    description: "两边对坐无言语，尽日时间下子声",
   },
   {
     title: "美术",
     img: "/majors/围棋.webp",
+    icon: <Platte theme="outline" size="24" fill="#333" />,
     id: "painting",
+    description: "壮哉昆仑方壶图，挂君高堂之素壁",
   },
   {
     title: "书法",
     img: "/majors/围棋.webp",
     id: "calligraphy",
+    icon: <WritingFluently theme="outline" size="24" fill="#333" />,
+    description: "铁画银钩藏雅韵，粗微浓淡漫馨香",
   },
   {
     title: "钢琴",
     img: "/majors/围棋.webp",
+    icon: <Piano theme="outline" size="24" fill="#333" />,
     id: "piano",
+    description: "嘈嘈切切错杂弹，大珠小珠落玉盘",
   },
   {
     title: "葫芦丝",
     img: "/majors/围棋.webp",
     id: "cucurbit flute",
+    icon: <Music theme="outline" size="24" fill="#333" />,
+    description: "一曲丝竹动客宾，响喝楼台十里堤",
   },
   {
     title: "椰胡",
     img: "/majors/围棋.webp",
+    icon: <MusicOne theme="outline" size="24" fill="#333" />,
     id: "yehu",
+    description: "玉纤挑落折冰声，散入秋空韵转清",
   },
   {
     title: "小步智学",
     img: "/majors/围棋.webp",
     id: "xiaobuzhixue",
+    icon: <BookOne theme="outline" size="24" fill="#333" />,
+    description: "寒夜读书忘却眠，锦衾香烬炉无烟",
   },
 ];
 
@@ -98,7 +119,7 @@ export default function Home() {
       <HomeCarousel />
       <div>
         <Row justify="center" align="middle" gutter={24}>
-          <Col span={10} style={{ height: "280px" }}>
+          <Col span={12} style={{ height: "280px" }}>
             <Row
               gutter={24}
               justify="center"
@@ -107,11 +128,12 @@ export default function Home() {
                 height: "inherit",
                 backgroundImage: "url(/company.png)",
                 backgroundSize: "100%",
-                backgroundRepeat: "no-repeat"
+                backgroundRepeat: "no-repeat",
               }}
             >
               {statis.map((item) => (
                 <Col
+                  key={item.title}
                   span={6}
                   style={{
                     background: "rgba(255,255,255,0.85)",
@@ -123,7 +145,7 @@ export default function Home() {
               ))}
             </Row>
           </Col>
-          <Col span={10}>
+          <Col span={12}>
             <HomeText
               title={introduction.title}
               subTitle={introduction.subTitle}
@@ -132,14 +154,14 @@ export default function Home() {
           </Col>
         </Row>
         <Row justify="center" align="middle">
-          <Col span={10}>
+          <Col span={12}>
             <HomeText
               title={philosophy.title}
               subTitle={philosophy.subTitle}
               paragraph={philosophy.paragraph}
             />
           </Col>
-          <Col span={10}>
+          <Col span={12}>
             <Image
               width={200}
               src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
@@ -147,12 +169,12 @@ export default function Home() {
           </Col>
         </Row>
         <Row justify="center" align="middle">
-          <Col span={10}>
+          <Col span={12}>
             <Row justify="center">
               <img src="/goal.jpg" alt="" width={350} />
             </Row>
           </Col>
-          <Col span={10}>
+          <Col span={12}>
             <HomeText
               title={goal.title}
               subTitle={goal.subTitle}
@@ -168,12 +190,16 @@ export default function Home() {
         <div style={{ padding: "0 100px" }}>
           <Row justify="center" gutter={[24, 24]}>
             {majors.map((item) => (
-              <Col span={6}>
-                <a href={`/majors/#${item.id}`}>
-                  <Card cover={<img alt="" src={item.img} />}>
-                    <Card.Meta title={item.title} />
-                  </Card>
-                </a>
+              <Col span={6} key={item.id}>
+                <Link to={`/major#${item.id}`}>
+                  <CardTemp
+                    title={item.title}
+                    img={item.img}
+                    description={item.description}
+                    icon={item.icon}
+                    label={item.id}
+                  ></CardTemp>
+                </Link>
               </Col>
             ))}
           </Row>

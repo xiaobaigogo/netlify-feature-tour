@@ -7,7 +7,7 @@ export default function HomeText({
 }: {
   title: string;
   subTitle: string;
-  paragraph?: string |string[];
+  paragraph?: string | string[];
 }) {
   return (
     <>

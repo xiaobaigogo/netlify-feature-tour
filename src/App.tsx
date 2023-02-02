@@ -20,7 +20,7 @@ function App() {
         <Header>
           <HeaderNav />
         </Header>
-        <Content>
+        <Content style={{width: '80%', margin: '0 auto'}}>
           <Outlet></Outlet>
         </Content>
         <Footer>Footer</Footer>

@@ -10,7 +10,7 @@ export default function BigThing() {
       <Typography.Title level={4} type="secondary" style={{ marginTop: "5px" }}>
         {"Big Thing"}
       </Typography.Title>
-      <Timeline mode={"left"} style={{ transform: "translate(-740px, 10px)" }}>
+      <Timeline mode={"left"} style={{ transform: "translate(-40%)" }}>
         <Timeline.Item
           dot={<ClockCircleOutlined />}
           label={

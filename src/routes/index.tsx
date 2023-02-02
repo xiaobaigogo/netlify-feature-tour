@@ -1,10 +1,10 @@
 import { createBrowserRouter, redirect, RouteObject } from "react-router-dom";
 import { lazy } from "react";
 import App from "../App";
-import Home from "../components/home";
+import Home from "../pages/home";
 
-const Major = lazy(() => import('@/components/major'))
-const About = lazy(() => import("@/components/about"));
+const Major = lazy(() => import('@/pages/major'))
+const About = lazy(() => import("@/pages/about"));
 const routes: RouteObject[] = [
   {
     path: "/",
