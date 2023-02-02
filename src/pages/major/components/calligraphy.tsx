@@ -16,15 +16,33 @@ export default function Calligraphy() {
           </Typography.Paragraph>
         </Col>
       </Row>
-      <Row>
+      <Row gutter={24}>
         <Col span={8}>
-          <Image src="/majors/书法老师1.png" alt="" />
+          <Image
+            src="/majors/书法老师1.png"
+            alt=""
+            width={"100%"}
+            height={"300px"}
+            className={"image-style"}
+          />
         </Col>
         <Col span={8}>
-          <Image src="/majors/书法奖状1.png" alt="" />
+          <Image
+            src="/majors/书法奖状1.png"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
+          />
         </Col>
         <Col span={8}>
-          <Image src="/majors/书法教学1.png" alt="" />
+          <Image
+            src="/majors/书法教学1.png"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
+          />
         </Col>
       </Row>
     </>

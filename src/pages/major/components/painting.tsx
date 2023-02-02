@@ -16,15 +16,33 @@ export default function Painting() {
           </Typography.Paragraph>
         </Col>
       </Row>
-      <Row>
-        <Col span={8}>
-          <Image src="/majors/美术教学1.png" alt="" />
+      <Row gutter={12}>
+        <Col span={7}>
+          <Image
+            src="/majors/美术教学1.png"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
+          />
         </Col>
-        <Col span={8}>
-          <Image src="/majors/美术奖状1.png" alt="" />
+        <Col span={10}>
+          <Image
+            src="/majors/美术奖状1.png"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
+          />
         </Col>
-        <Col span={8}>
-          <Image src="/majors/美术教学2.png" alt="" />
+        <Col span={7}>
+          <Image
+            src="/majors/美术教学2.png"
+            alt=""
+            className={"image-style"}
+            width={"100%"}
+            height={"300px"}
+          />
         </Col>
       </Row>
     </>

@@ -4,6 +4,9 @@ import Chess from "./components/chess";
 import Painting from "./components/painting";
 import Calligraphy from "./components/calligraphy";
 import { useEffect } from "react";
+
+import style from "./index.module.scss";
+import { Card } from "antd";
   
 
 export default function Major() {
@@ -25,7 +28,7 @@ export default function Major() {
   }, []);
 
   return (
-    <div>
+    <Card className={style.major}>
       <div id="weiqi">
         <Weiqi />
       </div>
@@ -38,6 +41,6 @@ export default function Major() {
       <div id="painting">
         <Painting />
       </div>
-    </div>
+    </Card>
   );
 }

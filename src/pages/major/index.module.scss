@@ -1,0 +1,12 @@
+.major {
+  :global {
+    .image-style {
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    div.ant-typography {
+      line-height: 2.5;
+    }
+  }
+}
