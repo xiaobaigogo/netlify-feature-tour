@@ -6,23 +6,14 @@ import {
   WritingFluently,
 } from "@icon-park/react";
 import { Card, Col, Row } from "antd";
-import { useLocation } from "react-router-dom";
 import style from "./index.module.less";
 
 export default function Catalogue() {
-  const location = useLocation();
-
-  const hash = location.hash;
 
   return (
     <Card className={style.catalogue}>
       <a href={"#weiqi"}>
-        <Row
-          className={style.select}
-          justify={"center"}
-          align={"middle"}
-          gutter={24}
-        >
+        <Row justify={"center"} align={"middle"} gutter={24}>
           <Col>
             <Checkerboard theme="outline" size="24" fill="#333" />
           </Col>
