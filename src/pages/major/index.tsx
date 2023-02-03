@@ -5,9 +5,10 @@ import Painting from "./components/painting";
 import Calligraphy from "./components/calligraphy";
 import { useEffect } from "react";
 
-import style from "./index.module.scss";
+import style from "./index.module.less";
 import { Card } from "antd";
 import Piano from "./components/piano";
+import Catalogue from "./components/catalogue";
   
 
 export default function Major() {
@@ -45,6 +46,7 @@ export default function Major() {
       <div id="piano">
         <Piano />
       </div>
+      <Catalogue></Catalogue>
     </Card>
   );
 }

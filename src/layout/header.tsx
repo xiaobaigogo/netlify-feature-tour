@@ -13,6 +13,10 @@ const menus = [
     key: "/major",
   },
   {
+    label: "课程安排",
+    key: "/course",
+  },
+  {
     label: "关于我们",
     key: "/about",
   },

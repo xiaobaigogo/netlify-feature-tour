@@ -1,10 +1,11 @@
-import { createBrowserRouter, redirect, RouteObject } from "react-router-dom";
+import { createBrowserRouter, RouteObject } from "react-router-dom";
 import { lazy } from "react";
 import App from "../App";
 import Home from "../pages/home";
 
 const Major = lazy(() => import('@/pages/major'))
 const About = lazy(() => import("@/pages/about"));
+const Course = lazy(() => import("@/pages/course"));
 const routes: RouteObject[] = [
   {
     path: "/",
@@ -19,12 +20,14 @@ const routes: RouteObject[] = [
       {
         path: "/major",
         element: <Major />,
-        index: true,
       },
       {
         path: "/about",
         element: <About />,
-        index: true,
+      },
+      {
+        path: "/course",
+        element: <Course />,
       },
     ],
   },

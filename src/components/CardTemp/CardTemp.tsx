@@ -20,15 +20,18 @@ export default function CardTemp({
   return (
     <Card className={style.root} hoverable>
       <Row className="icon-text" gutter={6}>
-        <Col>
-          {icon}
-        </Col>
+        <Col>{icon}</Col>
         <Col>
           <Typography.Text>{label}</Typography.Text>
         </Col>
       </Row>
       <Row justify={"center"} align={"middle"} className={"img-row"}>
-        <img className="img" src={img} alt="" />
+        <img
+          className="img"
+          src={img}
+          alt=""
+          style={{ borderRadius: "10px" }}
+        />
       </Row>
       <div className="title">
         <Row>

@@ -57,56 +57,56 @@ const statis = [
 const majors = [
   {
     title: "围棋",
-    img: "/majors/围棋.webp",
+    img: "/home/围棋封面.jpg",
     id: "weiqi",
     icon: <Checkerboard theme="outline" size="24" fill="#333" />,
     description: "战罢两奁分白黑，一秤何处有亏成",
   },
   {
     title: "象棋",
-    img: "/majors/围棋.webp",
+    img: "/home/象棋封面.jpg",
     icon: <Chess theme="outline" size="24" fill="#333" />,
     id: "chess",
     description: "两边对坐无言语，尽日时间下子声",
   },
   {
     title: "美术",
-    img: "/majors/围棋.webp",
+    img: "/home/美术封面.jpg",
     icon: <Platte theme="outline" size="24" fill="#333" />,
     id: "painting",
     description: "壮哉昆仑方壶图，挂君高堂之素壁",
   },
   {
     title: "书法",
-    img: "/majors/围棋.webp",
+    img: "/home/书法封面.jpg",
     id: "calligraphy",
     icon: <WritingFluently theme="outline" size="24" fill="#333" />,
     description: "铁画银钩藏雅韵，粗微浓淡漫馨香",
   },
   {
     title: "钢琴",
-    img: "/majors/围棋.webp",
+    img: "/home/钢琴封面.png",
     icon: <Piano theme="outline" size="24" fill="#333" />,
     id: "piano",
     description: "嘈嘈切切错杂弹，大珠小珠落玉盘",
   },
   {
     title: "葫芦丝",
-    img: "/majors/围棋.webp",
+    img: "/home/小步智学封面.png",
     id: "cucurbit flute",
     icon: <Music theme="outline" size="24" fill="#333" />,
     description: "一曲丝竹动客宾，响喝楼台十里堤",
   },
   {
     title: "椰胡",
-    img: "/majors/围棋.webp",
+    img: "/home/小步智学封面.png",
     icon: <MusicOne theme="outline" size="24" fill="#333" />,
     id: "yehu",
     description: "玉纤挑落折冰声，散入秋空韵转清",
   },
   {
     title: "小步智学",
-    img: "/majors/围棋.webp",
+    img: "/home/小步智学封面.png",
     id: "xiaobuzhixue",
     icon: <BookOne theme="outline" size="24" fill="#333" />,
     description: "寒夜读书忘却眠，锦衾香烬炉无烟",
@@ -162,16 +162,15 @@ export default function Home() {
             />
           </Col>
           <Col span={12}>
-            <Image
-              width={200}
-              src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-            />
+            <Row justify="center">
+              <img src="/home/Philosophy.png" alt="" width={350} />
+            </Row>
           </Col>
         </Row>
         <Row justify="center" align="middle">
           <Col span={12}>
             <Row justify="center">
-              <img src="/goal.jpg" alt="" width={350} />
+              <img src="/home/goal.png" alt="" width={350}/>
             </Row>
           </Col>
           <Col span={12}>
