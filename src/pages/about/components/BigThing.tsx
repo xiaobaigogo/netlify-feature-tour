@@ -1,4 +1,4 @@
-import { Card, Timeline, Typography } from "antd";
+import { Timeline, Typography } from "antd";
 import { ClockCircleOutlined } from "@ant-design/icons";
 
 export default function BigThing() {

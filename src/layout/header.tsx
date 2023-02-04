@@ -1,6 +1,5 @@
 import { Col, Dropdown, Menu, Row } from "antd";
-import { routes } from "@/routes";
-import { Link, RouteObject, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import type { MenuProps } from "antd";
 import { Wechat } from "@icon-park/react";
 

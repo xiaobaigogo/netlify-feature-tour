@@ -1,4 +1,4 @@
-import { Col, Row, Image, Typography, Statistic, Divider, Card, Button } from "antd";
+import { Col, Row, Typography, Statistic, Divider, Card } from "antd";
 import { Link } from "react-router-dom";
 import { BookOne, Checkerboard, Chess, Music, MusicOne, Piano, Platte, WritingFluently } from "@icon-park/react";
 import HomeCarousel from "./components/HomeCarousel";

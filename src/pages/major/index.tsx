@@ -27,6 +27,7 @@ export default function Major() {
 
   useEffect(() => {
     scrollToAnchor();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

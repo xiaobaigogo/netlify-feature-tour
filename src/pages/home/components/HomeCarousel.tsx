@@ -1,14 +1,14 @@
 import { Carousel, Col, Row } from "antd";
 
-const contentStyle: React.CSSProperties = {
-  height: "700px",
-  color: "#fff",
-  width: "100%",
-  borderRadius: "50px",
-  overflow: "hidden",
-  // boxShadow: "0px 0px 30px 11px",
-  textAlign: "center",
-};
+// const contentStyle: React.CSSProperties = {
+//   height: "700px",
+//   color: "#fff",
+//   width: "100%",
+//   borderRadius: "50px",
+//   overflow: "hidden",
+//   // boxShadow: "0px 0px 30px 11px",
+//   textAlign: "center",
+// };
 
 const imgs = [
   "/carousel/公司.png",
@@ -28,8 +28,8 @@ export default function HomeCarousel() {
       }}
     >
       <Col span={20}>
-        {/* <Carousel autoplay> */}
-        <Carousel>
+        <Carousel autoplay>
+        {/* <Carousel> */}
           {imgs.map((item, index) => (
             <div
               key={item}
