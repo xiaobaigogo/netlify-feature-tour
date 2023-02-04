@@ -117,8 +117,8 @@ export default function Home() {
   return (
     <>
       <HomeCarousel />
-      <Card>
-        <div style={{ width: "80%", margin: "0 auto" }}>
+      <Card style={{ width: "80%", margin: "0 auto" }}>
+        <div>
           <Row justify="center" align="middle" gutter={24}>
             <Col span={12} style={{ height: "280px" }}>
               <Row
@@ -186,7 +186,7 @@ export default function Home() {
             </Col>
           </Row>
         </div>
-        <div style={{ width: "80%", margin: "0 auto" }}>
+        <div>
           <Divider>
             <Typography.Title>课程介绍</Typography.Title>
           </Divider>

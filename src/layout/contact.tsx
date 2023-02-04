@@ -7,7 +7,6 @@ export default function Contact() {
       style={{
         width: '100%',
         padding: "50px 0",
-        background: "linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172))",
       }}
     >
       <Col

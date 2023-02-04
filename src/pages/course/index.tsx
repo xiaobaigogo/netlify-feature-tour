@@ -8,7 +8,7 @@ import Discount from "./components/Discount";
 export default function course() {
 
   return (
-    <Card>
+    <Card style={{margin: '0 auto', width: '80%'}}>
       <div>
         <DividerTemp
           name={"课程安排"}

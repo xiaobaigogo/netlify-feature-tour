@@ -54,16 +54,18 @@ export default function Header() {
           alt=""
         />
       </Col>
-      <Col span={16}>
+      <Col span={20}>
         <Menu
-          // theme="dark"
           mode="horizontal"
+          style={{
+            background: 'transparent'
+          }}
           selectedKeys={[location.pathname]}
           items={menus}
           onClick={(item) => navigate(item.key)}
         />
       </Col>
-      <Col span={6}>
+      <Col span={2}>
         <Dropdown
           menu={{ items: logo }}
           placement="bottom"

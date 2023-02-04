@@ -10,14 +10,24 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#E98800",
-          colorBgLayout: "#fff",
+          colorPrimary: "#F3AAC1",
+          colorBgLayout:
+            "linear-gradient(rgb(243,227,232), rgb(219, 166, 166))",
           borderRadius: 6,
         },
         components: {
           Layout: {
             colorBgBase: "#f5f5f5",
-            colorBgHeader: "#fff",
+            colorBgHeader:
+              "linear-gradient(rgb(255,255,255), rgb(243,227,232))",
+          },
+          Menu: {
+            // colorBgContainer:
+            //   "#eee",
+            // colorBgElevated: "#eee",
+            // colorBorderBg: "#EEE",
+            colorPrimaryBg: "#eee",
+            colorFill: "eee",
           },
         },
       }}
@@ -28,11 +38,11 @@ function App() {
         </Header>
         <Content>
           <Outlet></Outlet>
-        </Content>
-        <Content>
           <Contact></Contact>
         </Content>
-        <Footer style={{ textAlign: "center" }}>Copyright © xiaobaigogo</Footer>
+        <Footer style={{ textAlign: "center", background: "#f5f5f5" }}>
+          Copyright © xiaobaigogo
+        </Footer>
       </Layout>
     </ConfigProvider>
   );

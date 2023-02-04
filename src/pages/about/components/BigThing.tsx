@@ -3,7 +3,7 @@ import { ClockCircleOutlined } from "@ant-design/icons";
 
 export default function BigThing() {
   return (
-    <Card>
+    <>
       <Typography.Title style={{ margin: "5px 0" }}>
         {"益智艺术培训中心大事记"}
       </Typography.Title>
@@ -93,6 +93,6 @@ export default function BigThing() {
           益智棋社升级为益智艺术培训中心。
         </Timeline.Item>
       </Timeline>
-    </Card>
+    </>
   );
 }

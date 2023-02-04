@@ -24,7 +24,6 @@ export default function HomeCarousel() {
       justify={"center"}
       align={"middle"}
       style={{
-        backgroundImage: "linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172))",
         height: "900px",
       }}
     >

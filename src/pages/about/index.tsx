@@ -1,9 +1,12 @@
+import { Card } from "antd";
 import BigThing from "./components/BigThing";
 
 
 export default function About() {
 
   return (
-    <BigThing />
+    <Card style={{ margin: "0 auto", width: "80%" }}>
+      <BigThing />
+    </Card>
   );
 }
