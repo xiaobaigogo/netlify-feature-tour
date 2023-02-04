@@ -1,33 +1,49 @@
 import { Carousel, Col, Row } from "antd";
 
 const contentStyle: React.CSSProperties = {
-  height: "800px",
+  height: "700px",
   color: "#fff",
   width: "100%",
+  borderRadius: "50px",
+  overflow: "hidden",
+  // boxShadow: "0px 0px 30px 11px",
   textAlign: "center",
-  background: "#364d79",
 };
+
+const imgs = [
+  "/carousel/公司.png",
+  "/carousel/日常1.jpg",
+  "/carousel/学员1.jpg",
+  "/carousel/荣誉0.png",
+  "/carousel/荣誉1.png",
+];
 
 export default function HomeCarousel() {
   return (
-    <Row justify={"center"}>
-      <Col span={24}>
-        <Carousel autoplay>
-          <div>
-            <img style={contentStyle} src="/carousel/公司.png" alt="" />
-          </div>
-          <div>
-            <img style={contentStyle} src="/carousel/日常1.jpg" alt="" />
-          </div>
-          <div>
-            <img style={contentStyle} src="/carousel/学员1.jpg" alt="" />
-          </div>
-          <div>
-            <img style={contentStyle} src="/carousel/荣誉0.png" alt="" />
-          </div>
-          <div>
-            <img style={contentStyle} src="/carousel/荣誉1.png" alt="" />
-          </div>
+    <Row
+      justify={"center"}
+      align={"middle"}
+      style={{
+        backgroundImage: "linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172))",
+        height: "900px",
+      }}
+    >
+      <Col span={20}>
+        {/* <Carousel autoplay> */}
+        <Carousel>
+          {imgs.map((item, index) => (
+            <div
+              key={item}
+              id={String(index)}
+              style={{ height: "700px", width: "100%" }}
+            >
+              <img
+                src={item}
+                alt=""
+                style={{ height: "700px", width: "100%" }}
+              />
+            </div>
+          ))}
         </Carousel>
       </Col>
     </Row>

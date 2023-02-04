@@ -1,4 +1,4 @@
-import { Col, Row, Image, Typography, Statistic, Divider, Card } from "antd";
+import { Col, Row, Image, Typography, Statistic, Divider, Card, Button } from "antd";
 import { Link } from "react-router-dom";
 import { BookOne, Checkerboard, Chess, Music, MusicOne, Piano, Platte, WritingFluently } from "@icon-park/react";
 import HomeCarousel from "./components/HomeCarousel";
@@ -117,93 +117,98 @@ export default function Home() {
   return (
     <>
       <HomeCarousel />
-      <div>
-        <Row justify="center" align="middle" gutter={24}>
-          <Col span={12} style={{ height: "280px" }}>
-            <Row
-              gutter={24}
-              justify="center"
-              align={"middle"}
-              style={{
-                height: "inherit",
-                backgroundImage: "url(/company.png)",
-                backgroundSize: "100%",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              {statis.map((item) => (
-                <Col
-                  key={item.title}
-                  span={6}
-                  style={{
-                    background: "rgba(255,255,255,0.85)",
-                    padding: "10px 20px",
-                  }}
-                >
-                  <Statistic value={item.value} title={item.title}></Statistic>
+      <Card>
+        <div style={{ width: "80%", margin: "0 auto" }}>
+          <Row justify="center" align="middle" gutter={24}>
+            <Col span={12} style={{ height: "280px" }}>
+              <Row
+                gutter={24}
+                justify="center"
+                align={"middle"}
+                style={{
+                  height: "inherit",
+                  backgroundImage: "url(/company.png)",
+                  backgroundSize: "100%",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                {statis.map((item) => (
+                  <Col
+                    key={item.title}
+                    span={6}
+                    style={{
+                      background: "rgba(255,255,255,0.85)",
+                      padding: "10px 20px",
+                    }}
+                  >
+                    <Statistic
+                      value={item.value}
+                      title={item.title}
+                    ></Statistic>
+                  </Col>
+                ))}
+              </Row>
+            </Col>
+            <Col span={12}>
+              <HomeText
+                title={introduction.title}
+                subTitle={introduction.subTitle}
+                paragraph={introduction.paragraph}
+              />
+            </Col>
+          </Row>
+          <Row justify="center" align="middle">
+            <Col span={12}>
+              <HomeText
+                title={philosophy.title}
+                subTitle={philosophy.subTitle}
+                paragraph={philosophy.paragraph}
+              />
+            </Col>
+            <Col span={12}>
+              <Row justify="center">
+                <img src="/home/Philosophy.png" alt="" width={350} />
+              </Row>
+            </Col>
+          </Row>
+          <Row justify="center" align="middle">
+            <Col span={12}>
+              <Row justify="center">
+                <img src="/home/goal.png" alt="" width={350} />
+              </Row>
+            </Col>
+            <Col span={12}>
+              <HomeText
+                title={goal.title}
+                subTitle={goal.subTitle}
+                paragraph={goal.paragraph}
+              />
+            </Col>
+          </Row>
+        </div>
+        <div style={{ width: "80%", margin: "0 auto" }}>
+          <Divider>
+            <Typography.Title>课程介绍</Typography.Title>
+          </Divider>
+          <div style={{ padding: "0 100px" }}>
+            <Row justify="center" gutter={[24, 24]}>
+              {majors.map((item) => (
+                <Col span={6} key={item.id}>
+                  <Link to={`/major#${item.id}`}>
+                    <CardTemp
+                      title={item.title}
+                      img={item.img}
+                      description={item.description}
+                      icon={item.icon}
+                      label={item.id}
+                    ></CardTemp>
+                  </Link>
                 </Col>
               ))}
             </Row>
-          </Col>
-          <Col span={12}>
-            <HomeText
-              title={introduction.title}
-              subTitle={introduction.subTitle}
-              paragraph={introduction.paragraph}
-            />
-          </Col>
-        </Row>
-        <Row justify="center" align="middle">
-          <Col span={12}>
-            <HomeText
-              title={philosophy.title}
-              subTitle={philosophy.subTitle}
-              paragraph={philosophy.paragraph}
-            />
-          </Col>
-          <Col span={12}>
-            <Row justify="center">
-              <img src="/home/Philosophy.png" alt="" width={350} />
-            </Row>
-          </Col>
-        </Row>
-        <Row justify="center" align="middle">
-          <Col span={12}>
-            <Row justify="center">
-              <img src="/home/goal.png" alt="" width={350}/>
-            </Row>
-          </Col>
-          <Col span={12}>
-            <HomeText
-              title={goal.title}
-              subTitle={goal.subTitle}
-              paragraph={goal.paragraph}
-            />
-          </Col>
-        </Row>
-      </div>
-      <div>
-        <Divider>
-          <Typography.Title>课程介绍</Typography.Title>
-        </Divider>
-        <div style={{ padding: "0 100px" }}>
-          <Row justify="center" gutter={[24, 24]}>
-            {majors.map((item) => (
-              <Col span={6} key={item.id}>
-                <Link to={`/major#${item.id}`}>
-                  <CardTemp
-                    title={item.title}
-                    img={item.img}
-                    description={item.description}
-                    icon={item.icon}
-                    label={item.id}
-                  ></CardTemp>
-                </Link>
-              </Col>
-            ))}
-          </Row>
+          </div>
         </div>
-      </div>
+      </Card>
     </>
   );
 }

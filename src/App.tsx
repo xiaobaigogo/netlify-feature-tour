@@ -1,5 +1,3 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { ConfigProvider, Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
@@ -12,8 +10,15 @@ function App() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: "#1677ff",
+          colorPrimary: "#E98800",
+          colorBgLayout: "#fff",
           borderRadius: 6,
+        },
+        components: {
+          Layout: {
+            colorBgBase: "#f5f5f5",
+            colorBgHeader: "#fff",
+          },
         },
       }}
     >
@@ -21,13 +26,13 @@ function App() {
         <Header>
           <HeaderNav />
         </Header>
-        <Content style={{ width: "80%", margin: "0 auto" }}>
+        <Content>
           <Outlet></Outlet>
         </Content>
         <Content>
           <Contact></Contact>
         </Content>
-        <Footer style={{textAlign: 'center'}}>Copyright © xiaobaigogo</Footer>
+        <Footer style={{ textAlign: "center" }}>Copyright © xiaobaigogo</Footer>
       </Layout>
     </ConfigProvider>
   );

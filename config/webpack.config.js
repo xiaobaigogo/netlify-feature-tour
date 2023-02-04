@@ -185,9 +185,109 @@ module.exports = function (webpackEnv) {
           },
         }
       );
+
     }
     return loaders;
   };
+  
+  //修改后
+  // const getStyleLoaders = (cssOptions, preProcessor) => {
+  //   const loaders = [
+  //     isEnvDevelopment && require.resolve("style-loader"),
+  //     isEnvProduction && {
+  //       loader: MiniCssExtractPlugin.loader,
+  //       // css is located in `static/css`, use '../../' to locate index.html folder
+  //       // in production `paths.publicUrlOrPath` can be a relative path
+  //       options: paths.publicUrlOrPath.startsWith(".")
+  //         ? { publicPath: "../../" }
+  //         : {},
+  //     },
+  //     {
+  //       loader: require.resolve("css-loader"),
+  //       options: cssOptions,
+  //     },
+  //     {
+  //       // Options for PostCSS as we reference these options twice
+  //       // Adds vendor prefixing based on your specified browser support in
+  //       // package.json
+  //       loader: require.resolve("postcss-loader"),
+  //       options: {
+  //         postcssOptions: {
+  //           // Necessary for external CSS imports to work
+  //           // https://github.com/facebook/create-react-app/issues/2677
+  //           ident: "postcss",
+  //           config: false,
+  //           plugins: !useTailwind
+  //             ? [
+  //                 "postcss-flexbugs-fixes",
+  //                 [
+  //                   "postcss-preset-env",
+  //                   {
+  //                     autoprefixer: {
+  //                       flexbox: "no-2009",
+  //                     },
+  //                     stage: 3,
+  //                   },
+  //                 ],
+  //                 // Adds PostCSS Normalize as the reset css with default options,
+  //                 // so that it honors browserslist config in package.json
+  //                 // which in turn let's users customize the target behavior as per their needs.
+  //                 "postcss-normalize",
+  //               ]
+  //             : [
+  //                 "tailwindcss",
+  //                 "postcss-flexbugs-fixes",
+  //                 [
+  //                   "postcss-preset-env",
+  //                   {
+  //                     autoprefixer: {
+  //                       flexbox: "no-2009",
+  //                     },
+  //                     stage: 3,
+  //                   },
+  //                 ],
+  //               ],
+  //         },
+  //         sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+  //       },
+  //     },
+  //   ].filter(Boolean);
+  //   if (preProcessor) {
+  //     loaders.push(
+  //       {
+  //         loader: require.resolve("resolve-url-loader"),
+  //         options: {
+  //           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
+  //           root: paths.appSrc,
+  //         },
+  //       }
+  //     );
+
+  //     if(preProcessor === 'less-loader') {
+  //       loaders.push({
+  //         loader: require.resolve(preProcessor),
+  //         options: {
+  //           sourceMap: true,
+  //           lessOptions: {
+  //             modifyVars: require("../src/antd-theme/vars.ts"),
+  //             javascriptEnabled: true,
+  //           },
+  //         },
+  //       });
+  //     } else {
+  //       loaders.push(
+  //         {
+  //           loader: require.resolve(preProcessor),
+  //           options: {
+  //             sourceMap: true,
+  //           },
+  //         }
+  //       )
+  //     }
+  //   }
+  //   return loaders;
+  // };
+
 
   return {
     target: ["browserslist"],
@@ -429,6 +529,21 @@ module.exports = function (webpackEnv) {
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve("react-refresh/babel"),
+                  // [
+                  //   require.resolve('babel-plugin-named-asset-import'),
+                  //   {
+                  //     loaderMap: {
+                  //       svg: {
+                  //           ReactComponent:
+                  //           '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                  //       },
+                  //     },
+                  //   },
+                  // ],
+                  // [
+                  //   require.resolve('babel-plugin-import'), // 导入 import 插件
+                  //   { libraryName: "antd", style: true}
+                  // ]
                 ].filter(Boolean),
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
@@ -553,12 +668,13 @@ module.exports = function (webpackEnv) {
               exclude: lessModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
-                  // modules: true, 如果仅打开cssModule  那么原类名 将会没有前缀，无法与自己的样式类名关联，所以下边做法可取
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
                   modules: {
-                    localIdentName: "[local]_[hash:base64:5]",
+                    mode: "icss",
                   },
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 "less-loader"
               ),
@@ -568,8 +684,10 @@ module.exports = function (webpackEnv) {
               test: lessModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
+                  importLoaders: 3,
+                  sourceMap: isEnvProduction
+                    ? shouldUseSourceMap
+                    : isEnvDevelopment,
                   modules: {
                     mode: "local",
                     getLocalIdent: getCSSModuleLocalIdent,

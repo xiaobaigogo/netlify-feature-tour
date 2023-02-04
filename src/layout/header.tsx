@@ -1,7 +1,8 @@
-import { Col, Menu, Row } from "antd";
+import { Col, Dropdown, Menu, Row } from "antd";
 import { routes } from "@/routes";
 import { Link, RouteObject, useLocation, useNavigate } from "react-router-dom";
 import type { MenuProps } from "antd";
+import { Wechat } from "@icon-park/react";
 
 const menus = [
   {
@@ -19,6 +20,13 @@ const menus = [
   {
     label: "关于我们",
     key: "/about",
+  },
+];
+
+const logo: MenuProps["items"] = [
+  {
+    label: <img src="/footer/公众号.png" alt="" width={200} height={200} />,
+    key: "0",
   },
 ];
 
@@ -46,14 +54,23 @@ export default function Header() {
           alt=""
         />
       </Col>
-      <Col span={22}>
+      <Col span={16}>
         <Menu
-          theme="dark"
+          // theme="dark"
           mode="horizontal"
           selectedKeys={[location.pathname]}
           items={menus}
           onClick={(item) => navigate(item.key)}
         />
+      </Col>
+      <Col span={6}>
+        <Dropdown
+          menu={{ items: logo }}
+          placement="bottom"
+          arrow={{ pointAtCenter: true }}
+        >
+          <Wechat theme="outline" size="24" fill="#333" />
+        </Dropdown>
       </Col>
     </Row>
   );
